@@ -1,4 +1,4 @@
-import Login from "./Login"
+import Login from "./loginNew"
 import Home from "./Home"
 import Recipe from "./Recipe"
 

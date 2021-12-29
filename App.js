@@ -1,14 +1,18 @@
 import React from 'react';
-import { Login, Recipe } from "./screens";
+import { Recipe } from "./screens";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
-import * as Font from "expo-font";
-import AppLoading from 'expo-app-loading';
 
 import Tabs from "./navigation/tabs";
 
+import Login from './screens/loginNew';
+import Signup from './screens/signup';
+
+import { Colors } from './components/styles';
 
 const Stack = createStackNavigator();
+
+const {tertiary} = Colors;
 
 const App = () => {
     return (
@@ -16,18 +20,23 @@ const App = () => {
         <NavigationContainer>
             <Stack.Navigator
                 screenOptions={{
-                    headerShown: false
+                    headerShown: false,
+                    headerStyle: {
+                        backgroundColor: "transparent"
+                    },
+                    headerTintColor: tertiary,
+                    headerTransparent: true,
+                    headerTitle: '',
+                    headerLeftContainerStyle: {
+                        paddingLeft: 20
+                    }
+    
                 }}
-                initialRouteName={'Login'}
+                initialRouteName={'login'}
             >
-                <Stack.Screen
-                    name="Login"
-                    component={Login}
-                />
-                <Stack.Screen
-                    name="Home"
-                    component={Tabs}
-                />
+                <Stack.Screen name="login" component={Login}/>
+                <Stack.Screen name="signup" component={Signup}/>
+                <Stack.Screen name="home" component={Tabs}/>
                 <Stack.Screen
                     name="Recipe"
                     component={Recipe}
