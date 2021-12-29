@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     View,
     TouchableOpacity,
@@ -10,29 +10,27 @@ import {
 import {BlurView} from 'expo-blur';
 
 
-import { SIZES, COLORS, FONTS,icons } from '../constants';
+import { SIZES, COLORS, FONTS, icons } from '../constants';
 
 const RecipeCardInfo = ({recipeItem}) => {
     return (
         <BlurView
             intensity={99}
             tint="dark"
-            style={styles.RecipeCardContainer}
-        >
-
-            <RecipeCardDetails recipeItem={recipeItem}/>
-
+            style={styles.RecipeCardContainer}>
+                <RecipeCardDetails recipeItem={recipeItem}/>
         </BlurView>
     )
 }
 
 
 const RecipeCardDetails = ({recipeItem}) => {
+    const [books, setBooks] = useState(recipeItem.isBookmark);
+    recipeItem.isBookmark = books;
     return(
         <View
         style={{
             flex: 1,
-
         }}>
 
             {/* Name & Bookmark */}
@@ -52,8 +50,8 @@ const RecipeCardDetails = ({recipeItem}) => {
                 </Text>
 
 
-                <TouchableOpacity onPress={() => (recipeItem.isBookmark === true ? false : true)}>
-                    <Image source={recipeItem.isBookmark ? icons.bookmarkFilled : icons.bookmark}
+                <TouchableOpacity onPress={() => (books ? setBooks(false) : setBooks(true))}>
+                    <Image source={books ? icons.bookmarkFilled : icons.bookmark}
                     style={{
                         width: 20,
                         height: 20,

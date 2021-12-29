@@ -77,14 +77,16 @@ const Home = ({ navigation }) => {
                 backgroundColor: COLORS.lightGray
             }}>
 
-                <Image
-                    source={icons.search}
-                    style={{
-                        width: 20, 
-                        height: 20,
-                        tintColor: COLORS.gray
-                    }}
-                />
+                <TouchableOpacity onPress={() => console.log("searching")}>
+                    <Image
+                        source={icons.search}
+                        style={{
+                            width: 20, 
+                            height: 20,
+                            tintColor: COLORS.gray
+                        }}
+                    />
+                </TouchableOpacity>
 
 
                 <TextInput
@@ -93,7 +95,7 @@ const Home = ({ navigation }) => {
                     ...FONTS.body3
                 }}
                 placeholderTextColor={COLORS.gray}
-                placeholder='Search Recipes'
+                placeholder='Search Blogs'
                 />
                 
 
@@ -111,16 +113,23 @@ const Home = ({ navigation }) => {
                 backgroundColor: COLORS.lightGreen
             }}>
 
-                <Image 
-                source={images.recipe}
-                style={{
-                    width: 80,
-                    height: 80,
-                }}
-                />
+
+            <TouchableOpacity>
+                    <Image 
+                    source={icons.bellGolden}
+                    style={{
+                        marginTop: 15,
+                        marginLeft: 10,
+                        width: 60,
+                        height: 60,
+                        padding: 20
+                    }}
+                    />
+            </TouchableOpacity>
 
                 {/* Text */}
                 <View style={{
+                    marginTop: 10,
                     flex: 1,
                     paddingVertical: SIZES.radius,
                 }}>
@@ -128,18 +137,18 @@ const Home = ({ navigation }) => {
                         width: "70%",
                         ...FONTS.body4
                     }}>
-                        You have 12 recipes that you haven't tried yet.
+                        You have 12 new notifications that you haven't seen yet.
                     </Text>
 
                     <TouchableOpacity style={{
                         marginTop: 10,
-                    }} onPress={() => console.log("See Recipes")}>
+                    }} onPress={() => console.log("See blogs")}>
 
                     <Text style={{
                         color: COLORS.darkGreen,
                         textDecorationLine: 'underline',
                         ...FONTS.h4
-                    }}> See Recipes
+                    }}> See notifications
 
                     </Text>
                     </TouchableOpacity>
@@ -161,7 +170,7 @@ const Home = ({ navigation }) => {
             <Text style={{
                 marginHorizontal: SIZES.padding,
                 ...FONTS.h2
-            }}>Trending Recipes
+            }}>Trending Health Blogs
             </Text>
 
             <FlatList data={dummyData.trendingRecipes}

@@ -34,6 +34,9 @@ const sugar = require("../assets/icons/sugar.png")
 const shrimp = require("../assets/icons/shrimp.png")
 const tomato = require("../assets/icons/tomato.png")
 
+const bell = require("../assets/icons/bellnotification.png")
+const bellGolden = require("../assets/icons/bellgolden.png")
+
 export default {
     bookmark,
     bookmarkFilled,
@@ -68,5 +71,8 @@ export default {
     mode,
     modeB,
     settingsB,
-    bookmarkB
+    bookmarkB,
+
+    bell,
+    bellGolden
 }

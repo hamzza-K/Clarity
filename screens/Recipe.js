@@ -119,7 +119,9 @@ const RecipeCreatorCardInfo = ({selectedRecipe}) => {
 }
 
 
-const renderHeaderBar = ({navigation, selectedRecipe, scrollY}) => (
+const renderHeaderBar = ({navigation, selectedRecipe, scrollY}) => {
+
+    return(
     <View style={{
         position: "absolute",
         top: 0,
@@ -214,7 +216,7 @@ const renderHeaderBar = ({navigation, selectedRecipe, scrollY}) => (
         </TouchableOpacity>
 
     </View>
-)
+)};
 
 
 const renderRecipeInfo = ({selectedRecipe}) => (
