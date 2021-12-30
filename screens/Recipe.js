@@ -213,9 +213,6 @@ const renderHeaderBar = ({navigation, selectedRecipe, scrollY}) => {
             }}/>
             
         </TouchableOpacity>
-
-        
-
     </View>
 )};
 
@@ -236,11 +233,9 @@ const renderRecipeInfo = ({selectedRecipe}) => (
             justifyContent: 'center'
         }}>
 
-            <Text style={{
-                ...FONTS.h2
-            }}>
-                    {selectedRecipe?.name}
-                </Text>
+            <Text style={{...FONTS.h2}}>
+                {selectedRecipe?.name}
+            </Text>
             <Text style={{
                 marginTop: 5,
                 color: COLORS.lightGray2,
@@ -251,9 +246,7 @@ const renderRecipeInfo = ({selectedRecipe}) => (
 
         </View>
         {/* Viewers */}
-
-        <Viewers viewersList={selectedRecipe?.viewers} />
-
+        <Viewers viewersList={selectedRecipe?.viewers}/>
     </View>
 )
 
@@ -345,10 +338,7 @@ const Recipe = ({ navigation, route }) => {
                 {renderRecipeCardHeader()}
                 {/* Info  */}
                 {renderRecipeInfo({selectedRecipe})}
-
                 {/* Ingredient Title */}
-
-
                 </View>
             }
 
@@ -395,8 +385,6 @@ const Recipe = ({ navigation, route }) => {
                         </Text>
 
                     </View>
-
-
                     {/* Quantity */}
                 </View>
             )}
