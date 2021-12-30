@@ -10,7 +10,6 @@ import {
 import { BlurView } from 'expo-blur';
 
 import { SIZES, FONTS, COLORS, icons } from '../constants';
-
 import { Viewers } from '../components'
 
 const   HEADER_HEIGHT = 350;
@@ -166,7 +165,7 @@ const renderHeaderBar = ({navigation, selectedRecipe, scrollY}) => {
             <Text style={{
                 color: COLORS.lightGray2, ...FONTS.body4
             }}>
-                Recipe by: 
+                Article by: 
             </Text>
             <Text style={{
                 color: COLORS.white2, ...FONTS.h3
@@ -214,6 +213,8 @@ const renderHeaderBar = ({navigation, selectedRecipe, scrollY}) => {
             }}/>
             
         </TouchableOpacity>
+
+        
 
     </View>
 )};

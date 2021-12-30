@@ -20,9 +20,10 @@ const Tabs = () => {
                 left: 0,
                 right: 0,
                 elevation: 0,
-                backgroundColor: COLORS.white, 
+                backgroundColor: COLORS.white2, 
                 borderTopColor: "transparent",
-                height: 100,
+                height: 80,
+                borderRadius: 5
             }
         }}>
             <Tab.Screen

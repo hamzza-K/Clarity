@@ -50,6 +50,13 @@ const SignupSchema = yup.object({
     confirmPassword: yup.string().oneOf([yup.ref('password'), null], "Password must match!")
 })
 
+
+let snDateOfBirth = ""
+let snEmail = ""
+let snPassword = ""
+let snConfirmPassword = ""
+let snName = ""
+
 const Signup = ({navigation}) => {
 
     const [hidePassword, setHidePassword] = useState(true)
@@ -94,7 +101,9 @@ const Signup = ({navigation}) => {
                     dateOfBirth: '', 
                     password: '',
                     confirmPassword: ''}}
-                onSubmit={(values) => {console.log(values), navigation.replace("home")}}>
+                onSubmit={(values) => {
+                    console.log(values),
+                 navigation.navigate("home")}}>
                     {({handleChange, handleBlur, handleSubmit, values}) => (
                         <StyledFormArea>
                             {/* Name */}
@@ -201,5 +210,6 @@ const MyTextInput = ({label, icon, isPassword, hidePassword,
     )
 }
 
+export {snName,snEmail, snPassword}
 
 export default Signup;

@@ -20,6 +20,9 @@ const UserProfile8 = require("../assets/images/dummy_profiles/profile-pic-8.png"
 const UserProfile9 = require("../assets/images/dummy_profiles/profile-pic-9.png")
 const UserProfile10 = require("../assets/images/dummy_profiles/profile-pic-10.png")
 
+const kobayashi = require("../assets/images/dummy_profiles/kobayashi.png")
+const kanna = require("../assets/images/dummy_profiles/kanna.png")
+
 export default {
     loginBackground,
     PocketDoc,
@@ -40,4 +43,7 @@ export default {
     UserProfile8,
     UserProfile9,
     UserProfile10,
+
+    kobayashi,
+    kanna
 }

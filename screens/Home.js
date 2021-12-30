@@ -17,6 +17,8 @@ import { FONTS, COLORS, SIZES, icons, images, dummyData } from '../constants';
 
 import { CategoryCard, TrendingCard } from '../components';
 
+import { snName } from './signup'; 
+
 const Home = ({ navigation }) => {
 
 
@@ -38,7 +40,7 @@ const Home = ({ navigation }) => {
                         color: COLORS.darkGreen,
                         ...FONTS.h2
                     }}>
-                        Hello nv
+                        Hello {snName}
                     </Text>
 
                     {/* Statement below the user */}
@@ -53,7 +55,7 @@ const Home = ({ navigation }) => {
 
                     <TouchableOpacity onPress={() => console.log("Profile")}>
 
-                        <Image source={images.UserProfile5} 
+                        <Image source={images.kanna} 
                         style={{width:40, height: 40, borderRadius:20}}>
                             
 
@@ -95,7 +97,7 @@ const Home = ({ navigation }) => {
                     ...FONTS.body3
                 }}
                 placeholderTextColor={COLORS.gray}
-                placeholder='Search Blogs'
+                placeholder='Search'
                 />
                 
 
