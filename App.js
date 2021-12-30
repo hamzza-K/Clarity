@@ -9,6 +9,7 @@ import Login from './screens/loginNew';
 import Signup from './screens/signup';
 
 import { Colors } from './components/styles';
+import Modal from './screens/modalProfile';
 
 const Stack = createStackNavigator();
 
@@ -34,13 +35,14 @@ const App = () => {
                 }}
                 initialRouteName={'login'}
             >
+                
                 <Stack.Screen name="login" component={Login}/>
                 <Stack.Screen name="signup" component={Signup}/>
                 <Stack.Screen name="home" component={Tabs}/>
-                <Stack.Screen
-                    name="Recipe"
-                    component={Recipe}
-                />
+                <Stack.Screen name="Recipe" component={Recipe}/>
+                <Stack.Group screenOptions={{presentation: "modal"}}>
+                    <Stack.Screen name="modal" component={Modal} />
+                </Stack.Group>
             </Stack.Navigator>
         </NavigationContainer>
     )

@@ -31,7 +31,7 @@ const RecipeCreatorCardDetail = ({selectedRecipe}) => {
                 marginLeft: 20
             }}>
 
-
+            
                 <TouchableOpacity onPress={() => console.log("pic")}>
                     <Image source={selectedRecipe?.author?.profilePic}
                     style={{
@@ -51,7 +51,7 @@ const RecipeCreatorCardDetail = ({selectedRecipe}) => {
             }}>
 
                 <Text style={{color: COLORS.lightGray2, ...FONTS.body4}}>
-                    Recipe by:
+                    Article by:
                 </Text>
                 <Text style={{color: COLORS.white2, ...FONTS.h3}}>
                     {selectedRecipe?.author?.name}

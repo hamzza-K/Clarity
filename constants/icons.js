@@ -40,6 +40,9 @@ const bellGolden = require("../assets/icons/bellgolden.png")
 const heart = require("../assets/icons/heart.png")
 const heartB = require("../assets/icons/heartB.png")
 
+const smallCross = require("../assets/icons/smallCross.png")
+const birthday = require("../assets/images/birthday.png")
+
 export default {
     bookmark,
     bookmarkFilled,
@@ -80,5 +83,7 @@ export default {
     bellGolden,
 
     heart,
-    heartB
+    heartB,
+    smallCross,
+    birthday
 }

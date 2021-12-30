@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Text,
@@ -14,13 +14,13 @@ import {
 
 
 import { FONTS, COLORS, SIZES, icons, images, dummyData } from '../constants';
-
 import { CategoryCard, TrendingCard } from '../components';
 
-import { snName } from './signup'; 
+import Popup from '../components/popup';
 
 const Home = ({ navigation }) => {
 
+    const [viw, setViw] = useState(false)
 
     function renderHeader(){
         return(
@@ -40,7 +40,7 @@ const Home = ({ navigation }) => {
                         color: COLORS.darkGreen,
                         ...FONTS.h2
                     }}>
-                        Hello {snName}
+                        Hello There
                     </Text>
 
                     {/* Statement below the user */}
@@ -53,15 +53,16 @@ const Home = ({ navigation }) => {
 
             </View>
 
-                    <TouchableOpacity onPress={() => console.log("Profile")}>
+                    <Popup visi={true} navigation={navigation}>
+                    <TouchableOpacity onPress={() => {}}>
 
                         <Image source={images.kanna} 
                         style={{width:40, height: 40, borderRadius:20}}>
-                            
-
                         </Image>
-
                     </TouchableOpacity>
+                    </Popup>
+
+                    
 
                 </View>
         )
@@ -194,7 +195,6 @@ const Home = ({ navigation }) => {
         )
     }
 
-
     function renderCategoryHeader(){
         return(
 
@@ -218,12 +218,12 @@ const Home = ({ navigation }) => {
 
                 {/* View All */}
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setViw(!viw)}>
                     <Text style={{
                         color: COLORS.gray,
                         ...FONTS.body4
                     }}>
-                        View All
+                        {viw ? <Text>Collapse</Text> : <Text>View All </Text>}
 
                     </Text>
                 </TouchableOpacity>
@@ -264,24 +264,22 @@ const Home = ({ navigation }) => {
         // Shows each piece of Cuisine Item
         renderItem={({item}) => {
             return (
+
+                viw ? 
                 <CategoryCard 
-                
                 containerStyle={{
                     marginHorizontal: SIZES.padding
                 }}
                 categoryItem={item}
-
-
                 // Navigates to Recipe
-                onPress={() => navigation.navigate(("Recipe"), {recipe: item})}/>
+                onPress={() => navigation.navigate(("Recipe"), {recipe: item})}/> : <Text></Text>
             )
         }}
         ListFooterComponent={
-            <View style={{
-                marginBottom: 100
-            }}>
-
-            </View>
+            <>
+            <View style={{marginBottom: 10}}></View>
+            {renderSearchBar()}
+            </>
         }/>
         </SafeAreaView>
     )

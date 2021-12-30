@@ -23,7 +23,32 @@ const UserProfile10 = require("../assets/images/dummy_profiles/profile-pic-10.pn
 const kobayashi = require("../assets/images/dummy_profiles/kobayashi.png")
 const kanna = require("../assets/images/dummy_profiles/kanna.png")
 
+const exhibition = require("../assets/icons/exhibition.png")
+const one = require("../assets/icons/1.png")
+const two = require("../assets/icons/2.png")
+const gblue = require("../assets/icons/gblue.png")
+const greeneye = require("../assets/icons/greeneye.png")
+const health1 = require("../assets/icons/health1.png")
+const health2 = require("../assets/icons/health2.png")
+const londond1 = require("../assets/icons/londond1.png")
+const londond2 = require("../assets/icons/londond2.png")
+const randb = require("../assets/icons/randb.png")
+const teal = require("../assets/icons/teal.png")
+
 export default {
+
+    exhibition,
+    one,
+    two,
+    gblue,
+    greeneye,
+    health1,
+    health2,
+    londond1,
+    londond2,
+    randb,
+    teal,
+
     loginBackground,
     PocketDoc,
     profile,

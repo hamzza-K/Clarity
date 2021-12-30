@@ -1,9 +1,11 @@
 import React, {useState} from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { View } from 'react-native';
+import { View, Alert } from 'react-native';
 
 import {Formik} from 'formik';
 import * as yup from "yup";
+
+import signIn from '../firebase';
 
 import {Octicons, Ionicons, Fontisto} from '@expo/vector-icons';
 
@@ -28,7 +30,6 @@ import {
     Line,
     Colors,
 }
-
 from '../components/styles'
 
 //Colors
@@ -43,8 +44,18 @@ const LoginSchema = yup.object({
     password: yup.string().required("Password is required")
 })
 
-const Login = ({navigation}) => {
 
+//firebase login
+const onLogin = async (email, password) => {
+    try {
+        await app.auth().signInWithEmailAndPassword(email, password)
+        console.log("firebase auth succ", email, password)
+    }catch (error){
+        Alert.alert(error.message)
+    }
+}
+
+const Login = ({navigation}) => {
     const [hidePassword, setHidePassword] = useState(true)
 
     return (
@@ -59,12 +70,14 @@ const Login = ({navigation}) => {
                 <Formik initialValues={{email: '', password: ''}}
                 validationSchema={LoginSchema}
                 onSubmit={(values) => { 
-                    console.log(values);
+                    console.log(values.email, values.password);
+                    // signIn("maju@gmail.com", "maju123");
+                    
                     navigation.replace("home");
                 }}>
                     {({handleChange, handleBlur, handleSubmit, values}) => (
                         <StyledFormArea>
-                            <MyTextInput label="email address"
+                            <MyTextInput label="Email Address"
                             icon="mail"
                             placeholder="something@gmail.com"
                             placeholderTextColor={darkLight}
@@ -73,7 +86,7 @@ const Login = ({navigation}) => {
                             value={values.email}
                             keyboardType="email-address"/>
 
-                            <MyTextInput label="password"
+                            <MyTextInput label="Password"
                             icon="lock"
                             placeholder="* * * * * *"
                             placeholderTextColor={darkLight}
