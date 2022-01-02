@@ -20,7 +20,7 @@ import Popup from '../components/popup';
 
 const Home = ({ navigation }) => {
 
-    const [viw, setViw] = useState(false)
+    const [viw, setViw] = useState(true)
 
     function renderHeader(){
         return(
@@ -106,7 +106,7 @@ const Home = ({ navigation }) => {
         )
     }
 
-    function renderSeeRecipeCard(){
+    function Notifications(){
         return (
             <View style={{
                 flexDirection: 'row',
@@ -253,7 +253,7 @@ const Home = ({ navigation }) => {
                 {/* Search Bar */}
                 {renderSearchBar()}
                 {/* See Recipe Card */}
-                {renderSeeRecipeCard()}
+                {Notifications()}
                 {/* Trending Section */}
                 {renderTrendingSection()}
                 {/* Category Header */}

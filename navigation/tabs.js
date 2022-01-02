@@ -8,6 +8,8 @@ import { Home } from "../screens"
 import { COLORS, icons } from "../constants";
 import { TabIcon } from "../components";
 
+import Trending from "../screens/trendingScreen";
+
 const Tab = createBottomTabNavigator()
 
 const Tabs = () => {
@@ -45,7 +47,7 @@ const Tabs = () => {
             />
             <Tab.Screen
                 name="Bookmark"
-                component={Home}
+                component={Trending}
                 options={{
                     tabBarIcon: ({focused}) => <TabIcon focused={focused}
                     icon={icons.bookmark} iconb={icons.bookmarkB}/>
