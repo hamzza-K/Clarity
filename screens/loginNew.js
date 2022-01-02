@@ -69,10 +69,10 @@ const Login = ({navigation}) => {
 
                 <Formik initialValues={{email: '', password: ''}}
                 validationSchema={LoginSchema}
-                onSubmit={(values) => { 
-                    console.log(values.email, values.password);
-                    // signIn("maju@gmail.com", "maju123");
-                    
+                onSubmit={async (values) => { 
+                    // console.log(values.email, values.password);
+                    await signIn(values.email, values.password);
+            
                     navigation.replace("home");
                 }}>
                     {({handleChange, handleBlur, handleSubmit, values}) => (
