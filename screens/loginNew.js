@@ -5,7 +5,7 @@ import { View, Alert } from 'react-native';
 import {Formik} from 'formik';
 import * as yup from "yup";
 
-import signIn from '../firebase';
+import {signIn} from '../firebase';
 
 import {Octicons, Ionicons, Fontisto} from '@expo/vector-icons';
 
@@ -45,16 +45,6 @@ const LoginSchema = yup.object({
 })
 
 
-//firebase login
-const onLogin = async (email, password) => {
-    try {
-        await app.auth().signInWithEmailAndPassword(email, password)
-        console.log("firebase auth succ", email, password)
-    }catch (error){
-        Alert.alert(error.message)
-    }
-}
-
 const Login = ({navigation}) => {
     const [hidePassword, setHidePassword] = useState(true)
 
@@ -69,9 +59,9 @@ const Login = ({navigation}) => {
 
                 <Formik initialValues={{email: '', password: ''}}
                 validationSchema={LoginSchema}
-                onSubmit={async (values) => { 
+                onSubmit={(values) => { 
                     // console.log(values.email, values.password);
-                    await signIn(values.email, values.password);
+                    {signIn(values.email, values.password)};
             
                     navigation.replace("home");
                 }}>
