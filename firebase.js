@@ -36,9 +36,9 @@ const db = initializeFirestore(app, {
   experimentalAutoDetectLongPolling: true
 });
 
-const signIn =  (email, password) => {
+const signIn = async (email, password) => {
   try{  
-  signInWithEmailAndPassword(auth, email, password)
+  await signInWithEmailAndPassword(auth, email, password)
     .then((re) => {
       console.log(re)
     })
@@ -47,9 +47,9 @@ const signIn =  (email, password) => {
   }
 }
 
-function signUp(name, email, password){
+async function signUp(name, email, password){
   try{ 
-    createUserWithEmailAndPassword(auth, name, email, password)
+    await createUserWithEmailAndPassword(auth, name, email, password)
     .then((re) => {
       console.log(re)
     }) }catch (err) {

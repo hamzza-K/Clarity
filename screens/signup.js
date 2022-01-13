@@ -41,6 +41,8 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 //keyboard avoiding view
 import KeyboardAvoidingWrapper from '../components/keyboardAvoidingWrapper';
 
+import {signUp} from "../firebase";
+
 //signup schema
 
 const SignupSchema = yup.object({
@@ -102,8 +104,9 @@ const Signup = ({navigation}) => {
                     password: '',
                     confirmPassword: ''}}
                 onSubmit={(values) => {
-                    console.log(values),
-                 navigation.navigate("home")}}>
+                    signUp(values.email, values.password);
+                    console.log(values);
+                 navigation.navigate("login")}}>
                     {({handleChange, handleBlur, handleSubmit, values}) => (
                         <StyledFormArea>
                             {/* Name */}
