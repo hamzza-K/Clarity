@@ -5,13 +5,15 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import Tabs from "./navigation/tabs";
 
-import Login from './screens/loginNew';
-import Signup from './screens/signup';
+import Login from './screens/Login';
+import Signup from './screens/Signup';
 
 import { Colors } from './components/styles';
 import Modal from './screens/modalProfile';
 
 const Stack = createStackNavigator();
+
+
 
 const {tertiary} = Colors;
 

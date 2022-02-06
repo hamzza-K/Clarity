@@ -52,7 +52,7 @@ const CategoryCard = ({containerStyle, categoryItem, onPress}) => {
                     color: COLORS.gray,
                     ...FONTS.body4
                 }}>
-                    {categoryItem.duration} | {categoryItem.serving} Serving
+                    {categoryItem.duration} | Reading
                 </Text>
 
             </View>

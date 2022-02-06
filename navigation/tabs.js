@@ -4,11 +4,12 @@ import {
 } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 
-import { Home } from "../screens"
+import {Home} from "../screens"
 import { COLORS, icons } from "../constants";
 import { TabIcon } from "../components";
 
 import Trending from "../screens/trendingScreen";
+import SkinScan from "../screens/Scan";
 
 const Tab = createBottomTabNavigator()
 
@@ -37,8 +38,8 @@ const Tabs = () => {
                 }}
             />
             <Tab.Screen
-                name="Search"
-                component={Home}
+                name="Scan"
+                component={SkinScan}
                 options={{
                     tabBarIcon: ({focused}) => <TabIcon focused={focused}
                     icon={icons.mode} iconb={icons.modeB} />

@@ -58,7 +58,7 @@ const Viewers = ({viewersList}) => {
                                 textAlign: 'right',
                                 ...FONTS.body4,
                                 lineHeight: 18}}>
-                    Watched this
+                    Loved this!
                     </Text>
             </View>
         )

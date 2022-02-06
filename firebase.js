@@ -1,4 +1,5 @@
 // Import the functions you need from the SDKs you need
+import { Alert } from 'react-native';
 import {initializeApp} from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 import { getStorage } from 'firebase/storage';
@@ -43,7 +44,8 @@ const signIn = async (email, password) => {
       console.log(re)
     })
   }catch (error){
-    console.log(error)
+    console.log(error);
+    Alert.alert(error.message);
   }
 }
 

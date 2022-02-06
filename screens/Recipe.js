@@ -5,7 +5,8 @@ import {
     Image,
     TouchableOpacity,
     Animated,
-    Platform
+    Platform,
+    StyleSheet
 } from 'react-native';
 import { BlurView } from 'expo-blur';
 
@@ -44,7 +45,6 @@ const RecipeCreatorCardDetail = ({selectedRecipe}) => {
             </View>
 
             {/* Labels */}
-
             <View style={{
                 flex: 1,
                 marginHorizontal: 20,
@@ -89,16 +89,14 @@ const RecipeCreatorCardDetail = ({selectedRecipe}) => {
 
 
 
-const RecipeCreatorCardInfo = ({selectedRecipe}) => {
+const CreatorInfo = ({selectedRecipe}) => {
     if(Platform.OS === "ios"){
         return(
             <BlurView style={{
                 flex: 1,
                 borderRadius: SIZES.radius
             }}
-
             blurType="dark">
-
             </BlurView>
         )
 
@@ -109,9 +107,7 @@ const RecipeCreatorCardInfo = ({selectedRecipe}) => {
                 borderRadius: SIZES.radius,
                 backgroundColor: COLORS.transparentBlack7
             }}>
-
-                <RecipeCreatorCardDetail selectedRecipe={selectedRecipe} />
-                
+                <RecipeCreatorCardDetail selectedRecipe={selectedRecipe} /> 
             </View>
         )
     }
@@ -241,7 +237,7 @@ const renderRecipeInfo = ({selectedRecipe}) => (
                 color: COLORS.lightGray2,
                 ...FONTS.body4
             }}>
-                {selectedRecipe?.duration} | {selectedRecipe?.serving} Serving
+                {selectedRecipe?.duration} | Reading
             </Text>
 
         </View>
@@ -312,7 +308,7 @@ const Recipe = ({ navigation, route }) => {
                     ]
                 }}>
 
-                    <RecipeCreatorCardInfo selectedRecipe={selectedRecipe} />
+                    <CreatorInfo selectedRecipe={selectedRecipe} />
 
                 </Animated.View>
 
@@ -333,12 +329,14 @@ const Recipe = ({ navigation, route }) => {
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={
                 <View>
-
                 {/* Header */}
                 {renderRecipeCardHeader()}
                 {/* Info  */}
                 {renderRecipeInfo({selectedRecipe})}
                 {/* Ingredient Title */}
+                <View style={styles.descStyle}>
+                <Text style={{color: "black"}}>{selectedRecipe?.desc}</Text>
+            </View>
                 </View>
             }
 
@@ -346,54 +344,65 @@ const Recipe = ({ navigation, route }) => {
             onScroll={Animated.event([
                 {nativeEvent: { contentOffset: {y: scrollY}}}
             ], {useNativeDriver: true})}
+            // renderItem={({item}) => (
+            //     <View style={{
+            //         flexDirection: 'row',
+            //         paddingHorizontal: 30,
+            //         marginVertical: 5
+            //     }}>
+            //         {/* Icon  */}
+            //         <View style={{
+            //             alignItems: "center",
+            //             justifyContent: "center",
+            //             height: 50,
+            //             width: 50,
+            //             borderRadius: 5,
+            //             backgroundColor: COLORS.lightGray
+            //         }}>
 
-            renderItem={(item) => (
-                <View style={{
-                    flexDirection: 'row',
-                    paddingHorizontal: 30,
-                    marginVertical: 5
-                }}>
-                    {/* Icon  */}
-                    <View style={{
-                        alignItems: "center",
-                        justifyContent: "center",
-                        height: 50,
-                        width: 50,
-                        borderRadius: 5,
-                        backgroundColor: COLORS.lightGray
-                    }}>
-
-                        <Image source={item.icon}
-                        style={{
-                            height: 40,
-                            width: 40,
-                        }}/>
-                    </View>
+            //             <Image source={item.icon}
+            //             style={{
+            //                 height: 40,
+            //                 width: 40,
+            //             }}/>
+            //         </View>
 
 
-                    {/* Description */}
-                    <View style={{
-                        flex: 1,
-                        paddingHorizontal: 20,
-                        justifyContent: "center"
-                    }}>
+            //         {/* Description */}
+            //         <View style={{
+            //             flex: 1,
+            //             paddingHorizontal: 20,
+            //             justifyContent: "center"
+            //         }}>
 
-                        <Text style={{
-                            ...FONTS.body3
-                        }}>
-                            {item.description}
-                        </Text>
+            //             <Text style={{
+            //                 ...FONTS.body3
+            //             }}>
+            //                 {item.description}
+            //             </Text>
 
-                    </View>
-                    {/* Quantity */}
-                </View>
-            )}
+            //         </View>
+            //         {/* Quantity */}
+            //     </View>
+            // )}
             />
-
-                        {/* Header Bar */}
+            {/* Header Bar */}
             {renderHeaderBar({navigation, selectedRecipe, scrollY})}
         </View>
     )
 }
+
+
+const styles = StyleSheet.create({
+    descStyle: {
+        flexDirection: 'row',
+            alignItems: 'center',
+            alignContent: 'center',
+            padding: 10,
+            marginTop: 10,
+            borderRadius: SIZES.radius,
+            backgroundColor: COLORS.lightLime,
+    }
+})
 
 export default Recipe;

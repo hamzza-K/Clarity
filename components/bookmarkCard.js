@@ -32,7 +32,6 @@ const RecipeCardDetails = ({recipeItem}) => {
         style={{
             flex: 1,
         }}>
-
             {/* Name & Bookmark */}
             <View style={{
                 flex: 1,
