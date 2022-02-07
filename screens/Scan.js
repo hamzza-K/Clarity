@@ -80,7 +80,7 @@ const SkinScan = ({navigation}) => {
         <Text></Text>
         <Button title="Pick Image" onPress={pickImage} />
         <Text></Text>
-        <Button title="Take pic" onPress={takePic} />
+        {/* <Button title="Take pic" onPress={takePic} /> */}
         <Text></Text>
         <Button title="Upload Photo" onPress={onClickUpload} />
         <Text>Uploaded {uploadProgress}%</Text>

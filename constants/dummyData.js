@@ -10,7 +10,33 @@ const trendingRecipes = [
         serving: 1,
         isBookmark: false,
         category: "Eyes",
-        desc: "Lorem Ipsum ",
+        desc: "In this week’s case discussion, we look at a case from Dr Terry Harvey. \
+        This patient is a 30-year-old male with no previous skin cancer history who had \
+        been seen by another doctor in 2018 who imaged a lesion on his right thigh, but decided \
+        on no further action at the time. Dr Harvey saw him in 2021 and examined the same lesion and \
+        tracked down the previous imaging from 2018.\
+        30-year-old male\
+        No previous skin cancers\
+        Same lesion in 2018 vs 2021\
+        Update\
+        Here is the pathology result. What are your thoughts and reactions? \
+        MICROSCOPIC EXAMINATION\
+        1. Sections of the biopsy show an infiltrative basal cell carcinoma\
+        extending into superficial reticular dermis. There is no evidence of\
+        perineural infiltration or angioinvasion in these sections.\
+        2. SYNOPTIC REPORT FOR IN-SITU MELANOMA\
+        Site: Left lateral thigh.\
+        Type: Superficial spreading.\
+        Ulceration: Absent.\
+        Regression: Absent.\
+        Associated benign melanocytic lesion: Dysplastic junctional naevus.\
+        Nearest peripheral margin: 2.5 mm.\
+        TNM stage (8th Edition): pTis.\
+        Cancer Council Australia recommendation: Smm clearance.\
+        SUMMARY\
+        1. LEFT FOREHEAD, BIOPSY: INFILTRATIVE BASAL CELL CARCINOMA.\
+        2. LEFT LATERAL THIGH, EXCISION: IN SITU (LEVEL 1) MELANOMA, CLOSEST\
+        MARGIN 2.5 MM.",
         author: {
             profilePic: images.UserProfile5,
             name: "Maria",
@@ -75,19 +101,72 @@ const trendingRecipes = [
     },
     {
         id: 2,
-        name: "Malaysian Chicken Satay",
-        image: images.satay,
+        name: "How would you treat this patient? [24 January]",
+        image: images.londond1,
         duration: "50 mins",
         serving: 10,
-        isBookmark: true,
-        category: "Local",
-        desc: "Lorem ipsum dolor sit amet, \
-         consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore \
-         et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation \
-         ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor \
-         in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. \
-         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt \
-         mollit anim id est laborum.",
+        isBookmark: false,
+        category: "Global",
+        desc: "This week’s case discussion from Dr Bronwyn Edmunds features a 77-year-old woman who had an acral in situ melanoma excised from her foot by a general surgeon, and then a plastic surgeon for the wide local excision. During a skin check three months later, the following images were taken.\
+        What do you see, and what would you do?\
+        Update\
+        Excision biopsy of the suspicious pigmented skin lesion was done and another melanoma in situ was diagnosed.\
+        How did this happen? What would you do next?\
+        HISTOPATHOLOGY REPORT\
+Location number:\
+CLINICAL NoTES\
+77 year old lady; recent excision melanona in situ plantar surface left foot (October\
+2021), excision PSL nearby/posterior to skin graft plantar surface left foot; pigment on\
+ridges and central darker pignent; ? Mi. 2) excision PSL medial surface left foots\
+naevus, exclude malignancy. Histology skin lesion; orientation suture 12 o°clock\
+\
+MACROSCOPIC DESCRIPTION\
+1. Labelled 1) L) foot posterior’. an orientated skin ellipse 19 x 7 x 3mm bearing a\
+central dark tan patch 12 x 6mm. There is a suture at one pole designated 12 o'clock. The\
+3 o'clock half is marked blue and the 9 o'clock half marked black. Submitted central TS x\
+5 of entire lesion. Pl.\
+\
+2. Labelled *2) L) foot medial’. An orientated skin ellipse 10 x 4 x 2mm bearing a\
+central ill-defined macule 6 x 4nm. There is @ suture at one pole designated 12 0° clock.\
+The 3 o'clock half is marked blue and the 9 o'clock half marked black. (2.1) TS x 2 12\
+o'clock, (2.2) TS x 26 o'clock. A2 DS\
+\
+MICROSCOPIC DESCRIPTION\
+1. This excisional biopsy of hyperkeratotic acral skin shows an atypical melanocytic\
+proliferation characterised by nested aggregates of enlarged atypical and hyperchromatic\
+melanocytes within rete pegs, with abnormal upward and radial scatter in superficial\
+spreading pattern by increased density of these atypical melanocytic cells, consistent\
+with melanoma in situ. There is no evidence of invasive malignancy, and the melanoma in\
+situ extends to focally involve 3 o'clock and 9 o'clock radial margins.\
+\
+On SOX1@ immunohistochemistry, increased numbers of enlarged atypical melanocytes are\
+confirmed, showing broad upward scatter into the mid-epidermis and at the lateral aspect\
+of the lesion; features of acral melanoma in situ.\
+\
+2. Sections of hyperkeratotic acral skin reveal a lentiginous junctional melanocytic\
+naevus comprising increased density of non-nested junctional melanocytes, symmetrically\
+arranged with no only minor focal cytological atypia. There is no significant\
+architectural atypia, and no features to suggest malignancy.\
+\
+On SOX1@ immunohistochemistry, there is no evidence of an atypical melanocytic\
+proliferation. The lesional cells appear to involve both radial biopsy edges. Fungal\
+elements are not seen on PAS staining.\
+\
+This case has been reviewed with Dr Louise Jackett, who concurs of the diagnostic\
+inclusions.\
+\
+CONCLUSION\
+1. Ordentated skin excisional biopsy, L foot posterior: Acral melanoma in situ\
+(Superficial spreading pattern), involves 3 o'clock and 9 o'clock long margins.\
+\
+AICC tumour stage (2017, ath edition): pTis.\
+\
+2. Orientated skin excisional biopsy, L foot medial: Acral lentiginous junctional\
+melanocytic naevus.\
+\
+PATHOLOGIST\
+MBChB; FRCPA)\
+2/12/2021",
         author: {
             profilePic: images.UserProfile8,
             name: "Mandy",
@@ -150,14 +229,22 @@ const trendingRecipes = [
     },
     {
         id: 3,
-        name: "Sarawak Laksa",
-        image: images.laksa,
+        name: "EARLY DIAGNOSIS OF SKIN CANCER CAN SAVE YOUR LIFE",
+        image: require("../assets/icons/skincare.png"),
         duration: "30 mins",
         serving: 1,
         isBookmark: true,
-        category: "Local",
-        desc: "At vero eos et accusamus et iusto\
-         odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat\ On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.",
+        category: "Skin",
+        desc: "If left untreated skin cancer can be dangerous, even deadly. Fortunately, there are ways to cure skin cancer, especially if it is recognized and addressed in its early stages. It is important for you to know potential signs of skin cancer so you can see a dermatologist before it becomes harmful.\
+        \
+                How is skin cancer diagnosed?\
+               \ Skin cancer is typically marked by a new spot on the skin or changes to a mole or lesion that already exists. These changes include the growth of the lesion, changes in shape or color or if the lesion becomes bloody or itchy. Just one of these symptoms in itself does not mean that you have skin cancer. However, if your lesion fits any of these criteria, it is worth seeing a dermatologist to examine the lesion more closely.\
+               \
+                To determine whether you have skin cancer, a dermatologist will first compare a suspicious mole or lesion to other spots on your skin. If there is an irregularity, the dermatologist will perform a skin biopsy. A skin biopsy is a simple process. All the biopsy requires is scraping a bit of skin off the surface of your body and inspecting it under a microscope. In some cases a punch biopsy is necessary. The dermatologist uses a special tool to punch out a very small section of skin to examine.\
+                \
+                How is skin cancer treated?\
+                Again, skin cancer can be cured easily in most cases as long as it is caught quickly. Treatments vary based on several factors, but minor surgeries and other local treatments are some of the most common methods.\
+                ",
         author: {
             profilePic: images.UserProfile9,
             name: "Jessie",
@@ -222,12 +309,12 @@ const trendingRecipes = [
     },
     {
         id: 4,
-        name: "Nasi Lemak",
-        image: images.nasiLemak,
+        name: "Blood Circulation",
+        image: images.health1,
         duration: "1 hour",
         serving: 10,
         isBookmark: true,
-        category: "Local",
+        category: "Blood",
         author: {
             profilePic: images.UserProfile7,
             name: "Ali Baba",

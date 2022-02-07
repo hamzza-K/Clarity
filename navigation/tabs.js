@@ -54,14 +54,14 @@ const Tabs = () => {
                     icon={icons.bookmark} iconb={icons.bookmarkB}/>
                 }}
             />
-            <Tab.Screen
+            {/* <Tab.Screen
                 name="Settings"
                 component={Home}
                 options={{
                     tabBarIcon: ({focused}) => <TabIcon focused={focused}
                     icon={icons.settings} iconb={icons.settingsB}/>
                 }}
-            />
+            /> */}
         </Tab.Navigator>
     )
 }

@@ -32,8 +32,8 @@ const Viewers = ({viewersList}) => {
                     {viewersList?.map((item, index) => (
                         <View key={index}
                         style={{
-                            height: 50,
-                            width: 50,
+                            height: 40,
+                            width: 40,
                             marginLeft: index == 0 ? 0 : -35
                         }}>
                             <Image source={item.profilePic}
@@ -78,8 +78,8 @@ const Viewers = ({viewersList}) => {
                             return(
                                 <View key={index}
                                     style={{
-                                        height: 50,
-                                        width: 50,
+                                        height: 40,
+                                        width: 40,
                                         marginLeft: index == 0? 0: -35
                                     }}>
                                         {/* IMAGE SHOWING PROFILE */}
@@ -95,8 +95,8 @@ const Viewers = ({viewersList}) => {
                         if (index == 3){
                             return(
                                 <View key={index} style={{
-                                    height: 50,
-                                    width: 50,
+                                    height: 40,
+                                    width: 40,
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     marginLeft: -35,

@@ -66,20 +66,20 @@ const Popup = ({visi, navigation}) => {
         {/* CHILDREN */}
         <View style={{alignItems: 'center'}}>
           <Image
-            source={images.kanna}
+            source={images.UserProfile6}
             style={{height: 150, width: 150, marginVertical: 10, padding: 20}}
           />
           <Button title="Logout" onPress={() => {navigation.navigate("login")}} style={{marginVertical: 20}}/>
         </View>
 
         <Text style={{marginVertical: 30, fontSize: 20, textAlign: 'center'}}>
-          What are you looking at?
+          You are currently logged in. 
         </Text>
         {/* END CHILDREN */}
       </ModalPopup>
       <TouchableOpacity onPress={() => {setVisible(true)}}>
 
-                        <Image source={images.kanna} 
+                        <Image source={images.UserProfile6} 
                         style={{width:40, height: 40, borderRadius:20}} />
                         </TouchableOpacity>
     </View>

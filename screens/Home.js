@@ -56,7 +56,7 @@ const Home = ({ navigation }) => {
                     <Popup visi={true} navigation={navigation}>
                     <TouchableOpacity onPress={() => {}}>
 
-                        <Image source={images.kanna} 
+                        <Image source={images.UserProfile2} 
                         style={{width:40, height: 40, borderRadius:20}}>
                         </Image>
                     </TouchableOpacity>
